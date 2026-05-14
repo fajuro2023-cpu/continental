@@ -61,17 +61,17 @@ const T = {
   },
 };
 
-function getTotal(p) {
-  return p.scores.reduce((a, b) => a + b, 0);
+function getTotal(p: any) {
+  return p.scores.reduce((a: number, b: number) => a + b, 0);
 }
 
-function getBigWinners(players) {
+function getBigWinners(players: any[]) {
   if (players.length === 0) return [];
   const min = Math.min(...players.map(getTotal));
   return players.filter((p) => getTotal(p) === min);
 }
 
-function getSmallWinners(players) {
+function getSmallWinners(players: any[]) {
   return players.filter((p) => p.scores[TOTAL_GAMES - 1] === 0);
 }
 
